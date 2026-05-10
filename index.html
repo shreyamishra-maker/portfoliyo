@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shreya Mishra — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">INITIALIZING<span class="loader-dots">...</span></div>
+    </div>
+  </div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Particle canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket">/&gt;</span>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#github" class="nav-link">GitHub</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-greeting reveal">
+        <span class="terminal-prompt">$ whoami</span>
+      </div>
+      <h1 class="hero-title reveal">
+        Hi, I'm <span class="neon-name">Shreya Mishra</span>
+      </h1>
+      <div class="hero-subtitle reveal">
+        <span class="typing-text" id="typingText"></span><span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-desc reveal">
+        Building the future, one line of code at a time. 
+        Passionate about Python, AI, and creative design.
+      </p>
+      <div class="hero-buttons reveal">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-paper-plane"></i> Contact Me
+        </a>
+        <a href="https://github.com/shreyamishra-maker" target="_blank" class="btn btn-ghost">
+          <i class="fab fa-github"></i> GitHub Profile
+        </a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat-item">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">8+</span>
+          <span class="stat-label">Skills</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Passion</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window reveal">
+        <div class="window-bar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="window-title">shreya.py</span>
+        </div>
+        <div class="code-body">
+          <div class="code-line"><span class="kw">class</span> <span class="cls">Shreya</span>:</div>
+          <div class="code-line indent"><span class="kw">def</span> <span class="fn">__init__</span>(self):</div>
+          <div class="code-line indent2"><span class="var">self</span>.name <span class="op">=</span> <span class="str">"Shreya Mishra"</span></div>
+          <div class="code-line indent2"><span class="var">self</span>.role <span class="op">=</span> <span class="str">"Developer"</span></div>
+          <div class="code-line indent2"><span class="var">self</span>.passion <span class="op">=</span> [<span class="str">"Python"</span>, <span class="str">"AI"</span>, <span class="str">"Design"</span>]</div>
+          <div class="code-line indent2"><span class="var">self</span>.status <span class="op">=</span> <span class="str">"Open to collaborate 🚀"</span></div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line indent"><span class="kw">def</span> <span class="fn">build_future</span>(self):</div>
+          <div class="code-line indent2"><span class="kw">return</span> <span class="str">"Innovation + Code"</span></div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="cm"># Let's create something amazing!</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section about-section">
+    <div class="section-header">
+      <span class="section-tag">// 01</span>
+      <h2 class="section-title">About <span class="neon">Me</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-avatar-wrap reveal">
+        <div class="avatar-ring">
+          <div class="avatar-inner">
+            <i class="fas fa-terminal avatar-icon"></i>
+          </div>
+        </div>
+        <div class="avatar-badges">
+          <span class="badge">Python 🐍</span>
+          <span class="badge">AI 🤖</span>
+          <span class="badge">Design 🎨</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <div class="about-card glass-card">
+          <p class="about-intro">
+            Hey there! 👋 I'm <strong class="neon-text">Shreya Mishra</strong>, a passionate student developer on a mission to build meaningful technology that makes a real difference.
+          </p>
+          <p>
+            With a strong foundation in <span class="highlight-cyan">Python</span> and a growing expertise in <span class="highlight-pink">Web Development</span>, I love crafting elegant solutions to complex problems. From AI-powered applications to intuitive UI designs, I thrive at the intersection of creativity and code.
+          </p>
+          <p>
+            My journey started with a curiosity for how things work — and quickly evolved into a passion for building apps that matter. Whether it's a <span class="highlight-purple">healthcare monitor</span>, a <span class="highlight-cyan">safety platform</span>, or a <span class="highlight-pink">travel tracker</span>, I approach every project with purpose and precision.
+          </p>
+          <p>
+            When I'm not coding, you'll find me designing UI mockups in Canva, exploring the latest AI research, or brainstorming my next big idea. I believe in <strong class="neon-text">learning by building</strong> — and I'm just getting started.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt neon-icon"></i>
+              <span>India 🇮🇳</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-graduation-cap neon-icon"></i>
+              <span>Student Developer</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-code neon-icon"></i>
+              <span>Open Source Enthusiast</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-heart neon-icon"></i>
+              <span>Available for Collabs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section skills-section">
+    <div class="section-header">
+      <span class="section-tag">// 02</span>
+      <h2 class="section-title">My <span class="neon">Skills</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card glass-card reveal" data-skill="Python">
+        <div class="skill-icon">🐍</div>
+        <h3 class="skill-name">Python</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        <span class="skill-percent">90%</span>
+        <p class="skill-desc">Scripting, automation & AI/ML</p>
+      </div>
+      <div class="skill-card glass-card reveal" data-skill="HTML">
+        <div class="skill-icon">🌐</div>
+        <h3 class="skill-name">HTML5</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        <span class="skill-percent">88%</span>
+        <p class="skill-desc">Semantic, accessible markup</p>
+      </div>
+      <div class="skill-card glass-card reveal" data-skill="CSS">
+        <div class="skill-icon">🎨</div>
+        <h3 class="skill-name">CSS3</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+        <span class="skill-percent">82%</span>
+        <p class="skill-desc">Animations, Flexbox, Grid</p>
+      </div>
+      <div class="skill-card glass-card reveal" data-skill="JavaScript">
+        <div class="skill-icon">⚡</div>
+        <h3 class="skill-name">JavaScript</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        <span class="skill-percent">75%</span>
+        <p class="skill-desc">DOM, APIs & interactivity</p>
+      </div>
+      <div class="skill-card glass-card reveal" data-skill="GitHub">
+        <div class="skill-icon">🐙</div>
+        <h3 class="skill-name">GitHub</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        <span class="skill-percent">85%</span>
+        <p class="skill-desc">Version control & collaboration</p>
+      </div>
+      <div class="skill-card glass-card reveal" data-skill="Canva">
+        <div class="skill-icon">✏️</div>
+        <h3 class="skill-name">Canva</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+        <span class="skill-percent">92%</span>
+        <p class="skill-desc">Graphics & visual design</p>
+      </div>
+      <div class="skill-card glass-card reveal" data-skill="UI/UX">
+        <div class="skill-icon">🖌️</div>
+        <h3 class="skill-name">UI/UX Design</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+        <span class="skill-percent">78%</span>
+        <p class="skill-desc">User-centric interfaces</p>
+      </div>
+      <div class="skill-card glass-card reveal" data-skill="Presentation">
+        <div class="skill-icon">📊</div>
+        <h3 class="skill-name">Presentation</h3>
+        <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        <span class="skill-percent">95%</span>
+        <p class="skill-desc">Storytelling through slides</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section projects-section">
+    <div class="section-header">
+      <span class="section-tag">// 03</span>
+      <h2 class="section-title">My <span class="neon">Projects</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <!-- Project 1: Fit Check -->
+      <div class="project-card glass-card reveal" data-color="cyan">
+        <div class="project-header">
+          <div class="project-icon">👗</div>
+          <div class="project-badge">Fashion Tech</div>
+        </div>
+        <h3 class="project-title">Fit Check</h3>
+        <p class="project-desc">A smart fashion and style checking application that analyzes outfits, suggests improvements, and helps users build their personal style profile with AI assistance.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">AI/ML</span>
+          <span class="tech-tag">CSS</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/shreyamishra-maker" target="_blank" class="proj-btn proj-gh">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="#" class="proj-btn proj-live">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+      <!-- Project 2: Attendance Tracker -->
+      <div class="project-card glass-card reveal" data-color="purple">
+        <div class="project-header">
+          <div class="project-icon">📊</div>
+          <div class="project-badge">EdTech</div>
+        </div>
+        <h3 class="project-title">Attendance & Performance Tracker</h3>
+        <p class="project-desc">A comprehensive student tracking dashboard with real-time attendance monitoring, grade analytics, and performance visualization through interactive charts.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Charts.js</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/shreyamishra-maker" target="_blank" class="proj-btn proj-gh">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="#" class="proj-btn proj-live">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+      <!-- Project 3: Travel Tracker -->
+      <div class="project-card glass-card reveal" data-color="pink">
+        <div class="project-header">
+          <div class="project-icon">🗺️</div>
+          <div class="project-badge">Travel</div>
+        </div>
+        <h3 class="project-title">Travel Tracker</h3>
+        <p class="project-desc">A beautiful travel logging app to document journeys, pin visited destinations on an interactive map, track expenses, and create memorable travel diaries.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/shreyamishra-maker" target="_blank" class="proj-btn proj-gh">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="#" class="proj-btn proj-live">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+      <!-- Project 4: Girls Safety -->
+      <div class="project-card glass-card reveal" data-color="cyan">
+        <div class="project-header">
+          <div class="project-icon">🛡️</div>
+          <div class="project-badge">Safety App</div>
+        </div>
+        <h3 class="project-title">Girls Safety</h3>
+        <p class="project-desc">A women's safety application with one-tap emergency SOS alerts, real-time location sharing with trusted contacts, safe-route suggestions, and incident reporting.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">API</span>
+          <span class="tech-tag">HTML/CSS</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/shreyamishra-maker" target="_blank" class="proj-btn proj-gh">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="#" class="proj-btn proj-live">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+      <!-- Project 5: Diabetes Monitoring -->
+      <div class="project-card glass-card reveal" data-color="purple">
+        <div class="project-header">
+          <div class="project-icon">💉</div>
+          <div class="project-badge">HealthTech</div>
+        </div>
+        <h3 class="project-title">Diabetes Monitoring</h3>
+        <p class="project-desc">A health analytics dashboard for diabetes management with glucose trend graphs, meal logging, medication reminders, and AI-powered risk prediction insights.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">ML</span>
+          <span class="tech-tag">Data Viz</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/shreyamishra-maker" target="_blank" class="proj-btn proj-gh">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="#" class="proj-btn proj-live">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+        </div>
+        <div class="card-glow"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GITHUB SECTION -->
+  <section id="github" class="section github-section">
+    <div class="section-header">
+      <span class="section-tag">// 04</span>
+      <h2 class="section-title">GitHub <span class="neon">Activity</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="github-content">
+      <div class="github-profile-card glass-card reveal">
+        <div class="gh-header">
+          <div class="gh-avatar">
+            <img src="https://github.com/shreyamishra-maker.png" alt="Shreya Mishra" onerror="this.src='https://via.placeholder.com/100/0d0d1a/00f5ff?text=SM'"/>
+          </div>
+          <div class="gh-info">
+            <h3>shreyamishra-maker</h3>
+            <p>🐍 Python • 🌐 Web Dev • 🎨 Design</p>
+            <a href="https://github.com/shreyamishra-maker" target="_blank" class="btn btn-ghost sm">
+              <i class="fab fa-github"></i> View Profile
+            </a>
+          </div>
+        </div>
+        <div class="gh-stats-row">
+          <div class="gh-stat">
+            <span class="gh-num" id="ghRepos">—</span>
+            <span class="gh-label">Repos</span>
+          </div>
+          <div class="gh-stat">
+            <span class="gh-num" id="ghFollowers">—</span>
+            <span class="gh-label">Followers</span>
+          </div>
+          <div class="gh-stat">
+            <span class="gh-num" id="ghFollowing">—</span>
+            <span class="gh-label">Following</span>
+          </div>
+        </div>
+      </div>
+      <div class="github-graphs reveal">
+        <div class="graph-card glass-card">
+          <h4 class="graph-title"><i class="fas fa-chart-bar neon-icon"></i> GitHub Stats</h4>
+          <img src="https://github-readme-stats.vercel.app/api?username=shreyamishra-maker&show_icons=true&theme=radical&hide_border=true&bg_color=0d0d1a&title_color=00f5ff&icon_color=bf00ff&text_color=ffffff" alt="GitHub Stats" class="gh-img" onerror="this.style.display='none'"/>
+        </div>
+        <div class="graph-card glass-card">
+          <h4 class="graph-title"><i class="fas fa-fire neon-icon"></i> Streak Stats</h4>
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=shreyamishra-maker&theme=radical&hide_border=true&background=0d0d1a&ring=00f5ff&fire=bf00ff&currStreakLabel=ff2d78" alt="Streak Stats" class="gh-img" onerror="this.style.display='none'"/>
+        </div>
+        <div class="graph-card glass-card wide">
+          <h4 class="graph-title"><i class="fas fa-code neon-icon"></i> Top Languages</h4>
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shreyamishra-maker&layout=compact&theme=radical&hide_border=true&bg_color=0d0d1a&title_color=00f5ff&text_color=ffffff" alt="Top Languages" class="gh-img" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+    </div>
+    <!-- Contribution Graph -->
+    <div class="contrib-wrap reveal">
+      <div class="glass-card contrib-card">
+        <h4 class="graph-title"><i class="fas fa-calendar-alt neon-icon"></i> Contribution Activity</h4>
+        <img src="https://ghchart.rshah.org/00f5ff/shreyamishra-maker" alt="Contributions" class="contrib-img" onerror="this.style.display='none'"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section contact-section">
+    <div class="section-header">
+      <span class="section-tag">// 05</span>
+      <h2 class="section-title">Get In <span class="neon">Touch</span></h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="contact-intro reveal">Have a project in mind? Want to collaborate? Or just say hi? My inbox is always open!</p>
+    <div class="contact-grid">
+      <div class="contact-links reveal">
+        <a href="mailto:imshreyamishra4u@gmail.com" class="contact-card glass-card" data-color="cyan">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-info">
+            <h4>Email</h4>
+            <p>imshreyamishra4u@gmail.com</p>
+          </div>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
+        <a href="https://github.com/shreyamishra-maker" target="_blank" class="contact-card glass-card" data-color="purple">
+          <div class="contact-icon"><i class="fab fa-github"></i></div>
+          <div class="contact-info">
+            <h4>GitHub</h4>
+            <p>@shreyamishra-maker</p>
+          </div>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
+        <a href="#" class="contact-card glass-card" data-color="pink">
+          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+          <div class="contact-info">
+            <h4>LinkedIn</h4>
+            <p>Shreya Mishra</p>
+          </div>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
+        <a href="#" class="contact-card glass-card" data-color="cyan">
+          <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+          <div class="contact-info">
+            <h4>Instagram</h4>
+            <p>@shreyamishra</p>
+          </div>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <div class="glass-card contact-form-card">
+          <h3 class="form-title">Send a Message <span class="neon">⚡</span></h3>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-input" placeholder="Your name" id="formName"/>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-input" placeholder="your@email.com" id="formEmail"/>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-input form-textarea" placeholder="Let's build something amazing together..." id="formMsg"></textarea>
+          </div>
+          <button class="btn btn-primary full" id="sendBtn" onclick="sendMessage()">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div id="formFeedback" class="form-feedback"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>SM<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text">Made with <span class="heart">❤️</span> by <span class="neon-text">Shreya Mishra</span></p>
+      <div class="footer-links">
+        <a href="https://github.com/shreyamishra-maker" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:imshreyamishra4u@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer-copy">© 2024 Shreya Mishra. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
