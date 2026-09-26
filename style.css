@@ -1697,3 +1697,30 @@ body::before {
   body::before { opacity: .25; }
   .hero::after { width: 260px; height: 260px; right: -90px; top: 22%; }
 }
+
+
+/* Campus ambassador highlight */
+.profile-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 24px;
+  padding: 8px 13px;
+  border: 1px solid rgba(114,214,255,.18);
+  border-radius: 999px;
+  background: rgba(114,214,255,.055);
+  color: #aebacd;
+  font-size: 13px;
+  letter-spacing: .1px;
+}
+.profile-highlight strong { color: #dce9f7; font-weight: 600; }
+.profile-highlight-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 9px rgba(114,214,255,.55);
+}
+@media (max-width: 600px) {
+  .profile-highlight { font-size: 12px; line-height: 1.4; }
+}
