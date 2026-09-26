@@ -288,7 +288,7 @@ fetchGitHubData();
 // ===========================
 // CONTACT FORM
 // ===========================
-function sendMessage() {
+async function sendMessage() {
   const name = document.getElementById('formName').value.trim();
   const email = document.getElementById('formEmail').value.trim();
   const msg = document.getElementById('formMsg').value.trim();
@@ -303,6 +303,7 @@ function sendMessage() {
     feedback.textContent = '⚠ Please fill in all fields.';
     return;
   }
+
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     feedback.className = 'form-feedback error';
     feedback.textContent = '⚠ Please enter a valid email.';
@@ -312,16 +313,39 @@ function sendMessage() {
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
 
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    btn.disabled = false;
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/imshreyamishra4u@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message: msg,
+        _subject: 'New Portfolio Message from ' + name
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || data.success === false) {
+      throw new Error('Submission failed');
+    }
+
     feedback.className = 'form-feedback success';
-    feedback.textContent = '✓ Message sent! Shreya will get back to you soon.';
+    feedback.textContent = '✓ Message sent! I'll get back to you soon.';
     document.getElementById('formName').value = '';
     document.getElementById('formEmail').value = '';
     document.getElementById('formMsg').value = '';
-    setTimeout(() => { feedback.textContent = ''; }, 5000);
-  }, 1500);
+  } catch (error) {
+    feedback.className = 'form-feedback error';
+    feedback.textContent = '⚠ Something went wrong. Please email me directly.';
+  } finally {
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    btn.disabled = false;
+  }
 }
 
 // ===========================
